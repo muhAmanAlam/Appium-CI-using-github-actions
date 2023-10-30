@@ -26,18 +26,16 @@ steps:
   inputs:
     command: test
     projects: '**/*.csproj'
-    publishTestResults: true
-  
-# - task: VSTest@3
-#   inputs:
-#     testSelector: 'testAssemblies'
-#     testAssemblyVer2: |
-#       **\*test*.dll
-#       !**\*TestAdapter.dll
-#       !**\obj\**
-#     searchFolder: '$(System.DefaultWorkingDirectory)'
-#     testRunTitle: 'SpecFlow Tests'
+    publishTestResults: false
 
+- task: PublishTestResults@2
+  displayName: 'Publish Test Results'
+  inputs:
+    testResultsFormat: 'VSTest'
+    testResultsFiles: '*.trx'
+    searchFolder: '$(Agent.TempDirectory)'
+  
+  
 - task: PublishBuildArtifacts@1
   condition: succeededOrFailed()
   displayName: 'Publish Report Artifact'
