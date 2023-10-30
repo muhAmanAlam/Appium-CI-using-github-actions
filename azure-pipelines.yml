@@ -26,8 +26,8 @@ steps:
   inputs:
     command: test
     projects: '**/*.csproj'
-    publishTestResults: false
-    arguments: '--logger trx --results-directory "$(Agent.TempDirectory)"'
+    # publishTestResults: false
+    # arguments: '--logger trx --results-directory "$(Agent.TempDirectory)"'
 
 
 # - task: PublishTestResults@2
