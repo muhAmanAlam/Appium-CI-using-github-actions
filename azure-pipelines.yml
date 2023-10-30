@@ -27,6 +27,7 @@ steps:
     projects: '**/*.csproj'
 
 - task: PublishBuildArtifacts@1
+  condition: succeededOrFailed()
   displayName: 'Publish Report Artifact'
   inputs:
     pathtoPublish: 'testing/Report'
