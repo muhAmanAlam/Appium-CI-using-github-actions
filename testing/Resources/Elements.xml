@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xPaths>
+
+	<sauceDemo>
+		<item key='sauceDemo_usernname' value="//input[@id='user-name']"/>
+		<item key='sauceDemo_password' value="//input[@id='password']"/>
+		<item key='sauceDemo_loginBtn' value="//input[@id='login-button']"/>
+		<item key='sauceDemo_loginError' value="//h3[@data-test='error']"/>
+		<item key='sauceDemo_loginErrorBtn' value="//button[@class='error-button']"/>
+		<item key='sauceDemo_appLogo' value="//div[@class='app_logo']"/>
+		<item key='sauceDemo_addToCartBtn' value="//div[@class='pricebar']/button"/>
+		<item key='sauceDemo_shoppingCart' value="//a[@class='shopping_cart_link']"/>
+		<item key='sauceDemo_checkoutButton' value="//button[@id='checkout']"/>
+		<item key='sauceDemo_firstNameInputField' value="//input[@id='first-name']"/>
+		<item key='sauceDemo_LastNameInputField' value="//input[@id='last-name']"/>
+		<item key='sauceDemo_postalCodeInputField' value="//input[@id='postal-code']"/>
+		<item key='sauceDemo_errorMessage' value="/h3[contains(text(),'Error: Last Name is required')]"/>
+		<item key='sauceDemo_errorButton' value="//button[@class='error-button']"/>
+		<item key='sauceDemo_continueButton' value="//input[@id='continue']"/>
+		<item key='sauceDemo_finishButton' value="//button[@id='finish']"/>
+		<item key='sauceDemo_thankYouHeader' value="//h2[contains(text(),'Thank you for your order!')]"/>
+	</sauceDemo>
+
+	<practiceWebsite>
+		<item key='practiceWebsite_usernmame' value="//input[@id='username']"/>
+		<item key='practiceWebsite_password' value="//input[@id='password']"/>
+		<item key='practiceWebsite_loginBtn' value="//input[@id='submit']"/>
+	</practiceWebsite>
+
+
+	
+</xPaths>
