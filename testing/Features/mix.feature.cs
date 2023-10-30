@@ -76,7 +76,7 @@ namespace testing.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Testing Postman Echo Get")]
         [NUnit.Framework.CategoryAttribute("DataSource:testData/postEcho.xlsx")]
-        [NUnit.Framework.TestCaseAttribute("GET", "https://postman-echo.com", "get", "muh", "Aman", "xyz", "abc", "200", "", "", "", "", "", "", ".", null)]
+        [NUnit.Framework.TestCaseAttribute("GET", "https://postman-echo.com", "get", "muh", "Aman", "xyz", "abc", "500", "", "", "", "", "", "", ".", null)]
         public void TestingPostmanEchoGet(
                     string requestMethod, 
                     string baseUrl, 

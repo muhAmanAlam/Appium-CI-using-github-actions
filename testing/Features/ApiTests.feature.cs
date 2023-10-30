@@ -76,7 +76,7 @@ namespace testing.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Testing Postman Echo Get")]
         [NUnit.Framework.CategoryAttribute("DataSource:testData/postEcho.xlsx")]
-        [NUnit.Framework.TestCaseAttribute("GET", "https://postman-echo.com", "get", "muh", "Aman", "xyz", "abc", "200", "", "", "", "", "", "", ".", null)]
+        [NUnit.Framework.TestCaseAttribute("GET", "https://postman-echo.com", "get", "muh", "Aman", "xyz", "abc", "500", "", "", "", "", "", "", ".", null)]
         public void TestingPostmanEchoGet(
                     string requestMethod, 
                     string baseUrl, 
@@ -154,7 +154,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Testing Postman Echo Post")]
         [NUnit.Framework.CategoryAttribute("DataSource:testData/postEcho2.xlsx")]
-        [NUnit.Framework.TestCaseAttribute("POST", "https://postman-echo.com", "post", "Content-Type", "application/json", "500", "{\"reflect\":\"this\", \"this\":\"api\", \"inside\":{\"embedded\":\"random\"}}", "", "", "", "", "", "", "", "", "", ".", null)]
+        [NUnit.Framework.TestCaseAttribute("POST", "https://postman-echo.com", "post", "Content-Type", "application/json", "200", "{\"reflect\":\"this\", \"this\":\"api\", \"inside\":{\"embedded\":\"random\"}}", "", "", "", "", "", "", "", "", "", ".", null)]
         public void TestingPostmanEchoPost(
                     string requestMethod, 
                     string baseUrl, 
