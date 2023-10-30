@@ -26,15 +26,15 @@ steps:
   inputs:
     command: test
     projects: '**/*.csproj'
-    publishTestResults: false
+    # publishTestResults: false
 
-- task: PublishTestResults@2
-  condition: succeededOrFailed()
-  displayName: 'Publish Test Results'
-  inputs:
-    testResultsFormat: 'VSTest'
-    testResultsFiles: '*.trx'
-    searchFolder: '$(Agent.TempDirectory)'
+# - task: PublishTestResults@2
+#   condition: succeededOrFailed()
+#   displayName: 'Publish Test Results'
+#   inputs:
+#     testResultsFormat: 'VSTest'
+#     testResultsFiles: '*.trx'
+#     searchFolder: '$(Agent.TempDirectory)'
   
   
 - task: PublishBuildArtifacts@1
