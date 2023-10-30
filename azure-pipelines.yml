@@ -29,6 +29,7 @@ steps:
     publishTestResults: false
 
 - task: PublishTestResults@2
+  condition: succeededOrFailed()
   displayName: 'Publish Test Results'
   inputs:
     testResultsFormat: 'VSTest'
