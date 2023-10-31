@@ -36,12 +36,12 @@ steps:
       !**\obj\**
     searchFolder: '$(System.DefaultWorkingDirectory)'
 
-- task: SpecFlowPlus@0
-  condition: succeededOrFailed()
-  inputs:
-    generatorSource: 'FeatureFolder'
-    projectFilePath: 'testing'
-    testExecutionJson: '$(Build.SourcesDirectory)\testing\bin\Debug\TestExecution.json'
+# - task: SpecFlowPlus@0
+#   condition: succeededOrFailed()
+#   inputs:
+#     generatorSource: 'FeatureFolder'
+#     projectFilePath: 'testing'
+#     testExecutionJson: '$(Build.SourcesDirectory)\testing\bin\Debug\TestExecution.json'
   
 - task: PublishBuildArtifacts@1
   condition: succeededOrFailed()
