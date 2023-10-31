@@ -78,7 +78,7 @@ namespace testing.Helpers
         public static void ExecuteRequest()
         {
             response = client.Execute(request);
-            Console.WriteLine("Request Body:\n" + response.Content);
+            //Console.WriteLine("Request Body:\n" + response.Content);
         }
 
         public static int GetResponseCode()

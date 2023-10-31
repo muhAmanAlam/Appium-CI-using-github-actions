@@ -19,7 +19,8 @@ namespace testing.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Login and Order from Sauce Demo Website", Description="A short summary of the feature", SourceFile="Features\\WebApps.feature", SourceLine=0)]
+    [NUnit.Framework.TestFixtureAttribute()]
+    [NUnit.Framework.DescriptionAttribute("Login and Order from Sauce Demo Website")]
     public partial class LoginAndOrderFromSauceDemoWebsiteFeature
     {
         
@@ -30,7 +31,7 @@ namespace testing.Features
 #line 1 "WebApps.feature"
 #line hidden
         
-        [TechTalk.SpecRun.FeatureInitialize()]
+        [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -38,18 +39,19 @@ namespace testing.Features
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [TechTalk.SpecRun.FeatureCleanup()]
+        [NUnit.Framework.OneTimeTearDownAttribute()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
+        [NUnit.Framework.SetUpAttribute()]
         public void TestInitialize()
         {
         }
         
-        [TechTalk.SpecRun.ScenarioCleanup()]
+        [NUnit.Framework.TearDownAttribute()]
         public void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -58,6 +60,7 @@ namespace testing.Features
         public void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
+            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public void ScenarioStart()
@@ -70,7 +73,11 @@ namespace testing.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void _1_LoggingInWithoutPasswordNegativeTestCase1(string websiteName, string url, string username, string password, string firstName, string lastName, string postalCode, string column7, string column8, string column9, string column10, string column11, string _, string[] exampleTags)
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("1. Logging in without password (Negative Test Case 1)")]
+        [NUnit.Framework.CategoryAttribute("DataSource:testData/sauceDemo.xlsx")]
+        [NUnit.Framework.TestCaseAttribute("sauceDemo", "https://www.saucedemo.com/", "standard_user", "secret_sauce", "Aman", "Alam", "12345", "", "", "", "", "", ".", null)]
+        public void _1_LoggingInWithoutPasswordNegativeTestCase1(string websiteName, string url, string username, string password, string firstName, string lastName, string postalCode, string column7, string column8, string column9, string column10, string column11, string _, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "DataSource:testData/sauceDemo.xlsx"};
@@ -123,17 +130,11 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("1. Logging in without password (Negative Test Case 1), ExternalExamples, sauceDem" +
-            "o", new string[] {
-                "DataSource:testData/sauceDemo.xlsx"})]
-        public void _1_LoggingInWithoutPasswordNegativeTestCase1_ExternalExamples_SauceDemo()
-        {
-#line 36
-this._1_LoggingInWithoutPasswordNegativeTestCase1("sauceDemo", "https://www.saucedemo.com/", "standard_user", "secret_sauce", "Aman", "Alam", "12345", "", "", "", "", "", ".", ((string[])(null)));
-#line hidden
-        }
-        
-        public virtual void _2_LoggingIntoSauceDemoWebsite(string websiteName, string url, string username, string password, string firstName, string lastName, string postalCode, string column7, string column8, string column9, string column10, string column11, string _, string[] exampleTags)
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("2. Logging into Sauce Demo Website")]
+        [NUnit.Framework.CategoryAttribute("DataSource:testData/sauceDemo.xlsx")]
+        [NUnit.Framework.TestCaseAttribute("sauceDemo", "https://www.saucedemo.com/", "standard_user", "secret_sauce", "Aman", "Alam", "12345", "", "", "", "", "", ".", null)]
+        public void _2_LoggingIntoSauceDemoWebsite(string websiteName, string url, string username, string password, string firstName, string lastName, string postalCode, string column7, string column8, string column9, string column10, string column11, string _, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "DataSource:testData/sauceDemo.xlsx"};
@@ -183,16 +184,11 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("2. Logging into Sauce Demo Website, ExternalExamples, sauceDemo", new string[] {
-                "DataSource:testData/sauceDemo.xlsx"})]
-        public void _2_LoggingIntoSauceDemoWebsite_ExternalExamples_SauceDemo()
-        {
-#line 45
-this._2_LoggingIntoSauceDemoWebsite("sauceDemo", "https://www.saucedemo.com/", "standard_user", "secret_sauce", "Aman", "Alam", "12345", "", "", "", "", "", ".", ((string[])(null)));
-#line hidden
-        }
-        
-        public virtual void _3_OrderingAnItemFromTheSauceDemoWebsite(string websiteName, string url, string username, string password, string firstName, string lastName, string postalCode, string column7, string column8, string column9, string column10, string column11, string _, string[] exampleTags)
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("3. Ordering an item from the Sauce Demo Website")]
+        [NUnit.Framework.CategoryAttribute("DataSource:testData/sauceDemo.xlsx")]
+        [NUnit.Framework.TestCaseAttribute("sauceDemo", "https://www.saucedemo.com/", "standard_user", "secret_sauce", "Aman", "Alam", "12345", "", "", "", "", "", ".", null)]
+        public void _3_OrderingAnItemFromTheSauceDemoWebsite(string websiteName, string url, string username, string password, string firstName, string lastName, string postalCode, string column7, string column8, string column9, string column10, string column11, string _, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "DataSource:testData/sauceDemo.xlsx"};
@@ -242,16 +238,11 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("3. Ordering an item from the Sauce Demo Website, ExternalExamples, sauceDemo", new string[] {
-                "DataSource:testData/sauceDemo.xlsx"})]
-        public void _3_OrderingAnItemFromTheSauceDemoWebsite_ExternalExamples_SauceDemo()
-        {
-#line 52
-this._3_OrderingAnItemFromTheSauceDemoWebsite("sauceDemo", "https://www.saucedemo.com/", "standard_user", "secret_sauce", "Aman", "Alam", "12345", "", "", "", "", "", ".", ((string[])(null)));
-#line hidden
-        }
-        
-        public virtual void _4_EnterWrongDetailsNegativeTestCase2(string websiteName, string url, string username, string password, string firstName, string lastName, string postalCode, string column7, string column8, string column9, string column10, string column11, string _, string[] exampleTags)
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("4. Enter Wrong Details (Negative Test case 2)")]
+        [NUnit.Framework.CategoryAttribute("DataSource:testData/sauceDemo.xlsx")]
+        [NUnit.Framework.TestCaseAttribute("sauceDemo", "https://www.saucedemo.com/", "standard_user", "secret_sauce", "Aman", "Alam", "12345", "", "", "", "", "", ".", null)]
+        public void _4_EnterWrongDetailsNegativeTestCase2(string websiteName, string url, string username, string password, string firstName, string lastName, string postalCode, string column7, string column8, string column9, string column10, string column11, string _, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "DataSource:testData/sauceDemo.xlsx"};
@@ -301,16 +292,11 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("4. Enter Wrong Details (Negative Test case 2), ExternalExamples, sauceDemo", new string[] {
-                "DataSource:testData/sauceDemo.xlsx"})]
-        public void _4_EnterWrongDetailsNegativeTestCase2_ExternalExamples_SauceDemo()
-        {
-#line 61
-this._4_EnterWrongDetailsNegativeTestCase2("sauceDemo", "https://www.saucedemo.com/", "standard_user", "secret_sauce", "Aman", "Alam", "12345", "", "", "", "", "", ".", ((string[])(null)));
-#line hidden
-        }
-        
-        public virtual void _5_EnterWrongDetailsNegativeTestCase3(string websiteName, string url, string username, string password, string firstName, string lastName, string postalCode, string column7, string column8, string column9, string column10, string column11, string _, string[] exampleTags)
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("5. Enter Wrong Details (Negative Test case 3)")]
+        [NUnit.Framework.CategoryAttribute("DataSource:testData/sauceDemo.xlsx")]
+        [NUnit.Framework.TestCaseAttribute("sauceDemo", "https://www.saucedemo.com/", "standard_user", "secret_sauce", "Aman", "Alam", "12345", "", "", "", "", "", ".", null)]
+        public void _5_EnterWrongDetailsNegativeTestCase3(string websiteName, string url, string username, string password, string firstName, string lastName, string postalCode, string column7, string column8, string column9, string column10, string column11, string _, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "DataSource:testData/sauceDemo.xlsx"};
@@ -363,16 +349,11 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("5. Enter Wrong Details (Negative Test case 3), ExternalExamples, sauceDemo", new string[] {
-                "DataSource:testData/sauceDemo.xlsx"})]
-        public void _5_EnterWrongDetailsNegativeTestCase3_ExternalExamples_SauceDemo()
-        {
-#line 71
-this._5_EnterWrongDetailsNegativeTestCase3("sauceDemo", "https://www.saucedemo.com/", "standard_user", "secret_sauce", "Aman", "Alam", "12345", "", "", "", "", "", ".", ((string[])(null)));
-#line hidden
-        }
-        
-        public virtual void _6_EnterUserDetailsAndCheckout(string websiteName, string url, string username, string password, string firstName, string lastName, string postalCode, string column7, string column8, string column9, string column10, string column11, string _, string[] exampleTags)
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("6. Enter user details and checkout")]
+        [NUnit.Framework.CategoryAttribute("DataSource:testData/sauceDemo.xlsx")]
+        [NUnit.Framework.TestCaseAttribute("sauceDemo", "https://www.saucedemo.com/", "standard_user", "secret_sauce", "Aman", "Alam", "12345", "", "", "", "", "", ".", null)]
+        public void _6_EnterUserDetailsAndCheckout(string websiteName, string url, string username, string password, string firstName, string lastName, string postalCode, string column7, string column8, string column9, string column10, string column11, string _, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "DataSource:testData/sauceDemo.xlsx"};
@@ -426,15 +407,6 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             }
             this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("6. Enter user details and checkout, ExternalExamples, sauceDemo", new string[] {
-                "DataSource:testData/sauceDemo.xlsx"})]
-        public void _6_EnterUserDetailsAndCheckout_ExternalExamples_SauceDemo()
-        {
-#line 82
-this._6_EnterUserDetailsAndCheckout("sauceDemo", "https://www.saucedemo.com/", "standard_user", "secret_sauce", "Aman", "Alam", "12345", "", "", "", "", "", ".", ((string[])(null)));
-#line hidden
         }
     }
 }

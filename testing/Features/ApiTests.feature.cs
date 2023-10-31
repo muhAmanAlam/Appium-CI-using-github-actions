@@ -19,7 +19,8 @@ namespace testing.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Testinng the Postman-Echo API", Description="A short summary of the feature", SourceFile="Features\\ApiTests.feature", SourceLine=0)]
+    [NUnit.Framework.TestFixtureAttribute()]
+    [NUnit.Framework.DescriptionAttribute("Testinng the Postman-Echo API")]
     public partial class TestinngThePostman_EchoAPIFeature
     {
         
@@ -30,7 +31,7 @@ namespace testing.Features
 #line 1 "ApiTests.feature"
 #line hidden
         
-        [TechTalk.SpecRun.FeatureInitialize()]
+        [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -38,18 +39,19 @@ namespace testing.Features
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [TechTalk.SpecRun.FeatureCleanup()]
+        [NUnit.Framework.OneTimeTearDownAttribute()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
+        [NUnit.Framework.SetUpAttribute()]
         public void TestInitialize()
         {
         }
         
-        [TechTalk.SpecRun.ScenarioCleanup()]
+        [NUnit.Framework.TearDownAttribute()]
         public void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -58,6 +60,7 @@ namespace testing.Features
         public void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
+            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public void ScenarioStart()
@@ -70,7 +73,11 @@ namespace testing.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void TestingPostmanEchoGet(
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Testing Postman Echo Get")]
+        [NUnit.Framework.CategoryAttribute("DataSource:testData/postEcho.xlsx")]
+        [NUnit.Framework.TestCaseAttribute("GET", "https://postman-echo.com", "get", "muh", "Aman", "xyz", "abc", "500", "", "", "", "", "", "", ".", null)]
+        public void TestingPostmanEchoGet(
                     string requestMethod, 
                     string baseUrl, 
                     string endPoint, 
@@ -144,16 +151,11 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Testing Postman Echo Get, ExternalExamples, GET", new string[] {
-                "DataSource:testData/postEcho.xlsx"})]
-        public void TestingPostmanEchoGet_ExternalExamples_GET()
-        {
-#line 6
-this.TestingPostmanEchoGet("GET", "https://postman-echo.com", "get", "muh", "Aman", "xyz", "abc", "500", "", "", "", "", "", "", ".", ((string[])(null)));
-#line hidden
-        }
-        
-        public virtual void TestingPostmanEchoPost(
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Testing Postman Echo Post")]
+        [NUnit.Framework.CategoryAttribute("DataSource:testData/postEcho2.xlsx")]
+        [NUnit.Framework.TestCaseAttribute("POST", "https://postman-echo.com", "post", "Content-Type", "application/json", "200", "{\"reflect\":\"this\", \"this\":\"api\", \"inside\":{\"embedded\":\"random\"}}", "", "", "", "", "", "", "", "", "", ".", null)]
+        public void TestingPostmanEchoPost(
                     string requestMethod, 
                     string baseUrl, 
                     string endPoint, 
@@ -229,15 +231,6 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             }
             this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Testing Postman Echo Post, ExternalExamples, POST", new string[] {
-                "DataSource:testData/postEcho2.xlsx"})]
-        public void TestingPostmanEchoPost_ExternalExamples_POST()
-        {
-#line 16
-this.TestingPostmanEchoPost("POST", "https://postman-echo.com", "post", "Content-Type", "application/json", "200", "{\"reflect\":\"this\", \"this\":\"api\", \"inside\":{\"embedded\":\"random\"}}", "", "", "", "", "", "", "", "", "", ".", ((string[])(null)));
-#line hidden
         }
     }
 }
