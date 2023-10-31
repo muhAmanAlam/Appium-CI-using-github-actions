@@ -8,7 +8,7 @@ namespace testing.Factories
 
         public static IWebElement GetElement(string locatorValue)
         {
-            IWebElement element = null;
+            IWebElement element;
             try
             {
                 element = DriverFactory.driver.FindElement(By.XPath(locatorValue));
@@ -27,7 +27,7 @@ namespace testing.Factories
                 DriverFactory.driver.FindElement(By.XPath(locatorValue));
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
