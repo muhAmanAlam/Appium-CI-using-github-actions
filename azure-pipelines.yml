@@ -39,6 +39,7 @@ steps:
 #     searchFolder: '$(Agent.TempDirectory)'
   
 - task: SpecFlowPlus@0
+  condition: succeededOrFailed()
   inputs:
     generatorSource: 'FeatureFolder'
     projectFilePath: 'testing'
