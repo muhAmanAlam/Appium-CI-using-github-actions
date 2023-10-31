@@ -21,23 +21,21 @@ steps:
   inputs:
     command: 'build'
 
-- task: DotNetCoreCLI@2
-  displayName: 'Run Tests'
-  inputs:
-    command: test
-    projects: '**/*.csproj'
-    # publishTestResults: false
-    # arguments: '--logger trx --results-directory "$(Agent.TempDirectory)"'
-
-
-# - task: PublishTestResults@2
-#   condition: succeededOrFailed()
-#   displayName: 'Publish Test Results'
+# - task: DotNetCoreCLI@2
+#   displayName: 'Run Tests'
 #   inputs:
-#     testResultsFormat: 'VSTest'
-#     testResultsFiles: '*.trx'
-#     searchFolder: '$(Agent.TempDirectory)'
+#     command: test
+#     projects: '**/*.csproj'
   
+- task: VSTest@3
+  inputs:
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
+      **\*test*.dll
+      !**\*TestAdapter.dll
+      !**\obj\**
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+
 - task: SpecFlowPlus@0
   condition: succeededOrFailed()
   inputs:
