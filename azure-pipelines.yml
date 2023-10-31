@@ -21,11 +21,12 @@ steps:
   inputs:
     command: 'build'
 
-# - task: DotNetCoreCLI@2
-#   displayName: 'Run Tests'
-#   inputs:
-#     command: test
-#     projects: '**/*.csproj'
+- task: DotNetCoreCLI@2
+  displayName: 'Run Tests'
+  inputs:
+    command: test
+    projects: '**/*.csproj'
+    publishTestResults: false
   
 # - task: VSTest@3
 #   inputs:
@@ -50,3 +51,9 @@ steps:
   inputs:
     pathtoPublish: 'testing/Report'
     artifactName: 'TestReport'
+- task: PublishBuildArtifacts@1
+  condition: succeededOrFailed()
+  displayName: 'Publish Report Artifact'
+  inputs:
+    pathtoPublish: 'testing\bin\Debug\TestExecution.json'
+    artifactName: 'json report'
