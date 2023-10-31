@@ -19,8 +19,7 @@ namespace testing.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("mix")]
+    [TechTalk.SpecRun.FeatureAttribute("mix", Description="A short summary of the feature", SourceFile="Features\\mix.feature", SourceLine=0)]
     public partial class MixFeature
     {
         
@@ -31,7 +30,7 @@ namespace testing.Features
 #line 1 "mix.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace testing.Features
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace testing.Features
         public void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public void ScenarioStart()
@@ -73,11 +70,7 @@ namespace testing.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Testing Postman Echo Get")]
-        [NUnit.Framework.CategoryAttribute("DataSource:testData/postEcho.xlsx")]
-        [NUnit.Framework.TestCaseAttribute("GET", "https://postman-echo.com", "get", "muh", "Aman", "xyz", "abc", "500", "", "", "", "", "", "", ".", null)]
-        public void TestingPostmanEchoGet(
+        public virtual void TestingPostmanEchoGet(
                     string requestMethod, 
                     string baseUrl, 
                     string endPoint, 
@@ -151,11 +144,16 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("1. Logging in without password (Negative Test Case 1)")]
-        [NUnit.Framework.CategoryAttribute("DataSource:testData/sauceDemo.xlsx")]
-        [NUnit.Framework.TestCaseAttribute("sauceDemo", "https://www.saucedemo.com/", "standard_user", "secret_sauce", "Aman", "Alam", "12345", "", "", "", "", "", ".", null)]
-        public void _1_LoggingInWithoutPasswordNegativeTestCase1(string websiteName, string url, string username, string password, string firstName, string lastName, string postalCode, string column7, string column8, string column9, string column10, string column11, string _, string[] exampleTags)
+        [TechTalk.SpecRun.ScenarioAttribute("Testing Postman Echo Get, ExternalExamples, GET", new string[] {
+                "DataSource:testData/postEcho.xlsx"})]
+        public void TestingPostmanEchoGet_ExternalExamples_GET()
+        {
+#line 6
+this.TestingPostmanEchoGet("GET", "https://postman-echo.com", "get", "muh", "Aman", "xyz", "abc", "500", "", "", "", "", "", "", ".", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void _1_LoggingInWithoutPasswordNegativeTestCase1(string websiteName, string url, string username, string password, string firstName, string lastName, string postalCode, string column7, string column8, string column9, string column10, string column11, string _, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "DataSource:testData/sauceDemo.xlsx"};
@@ -208,11 +206,17 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2. Logging into Sauce Demo Website")]
-        [NUnit.Framework.CategoryAttribute("DataSource:testData/sauceDemo.xlsx")]
-        [NUnit.Framework.TestCaseAttribute("sauceDemo", "https://www.saucedemo.com/", "standard_user", "secret_sauce", "Aman", "Alam", "12345", "", "", "", "", "", ".", null)]
-        public void _2_LoggingIntoSauceDemoWebsite(string websiteName, string url, string username, string password, string firstName, string lastName, string postalCode, string column7, string column8, string column9, string column10, string column11, string _, string[] exampleTags)
+        [TechTalk.SpecRun.ScenarioAttribute("1. Logging in without password (Negative Test Case 1), ExternalExamples, sauceDem" +
+            "o", new string[] {
+                "DataSource:testData/sauceDemo.xlsx"})]
+        public void _1_LoggingInWithoutPasswordNegativeTestCase1_ExternalExamples_SauceDemo()
+        {
+#line 15
+this._1_LoggingInWithoutPasswordNegativeTestCase1("sauceDemo", "https://www.saucedemo.com/", "standard_user", "secret_sauce", "Aman", "Alam", "12345", "", "", "", "", "", ".", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void _2_LoggingIntoSauceDemoWebsite(string websiteName, string url, string username, string password, string firstName, string lastName, string postalCode, string column7, string column8, string column9, string column10, string column11, string _, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "DataSource:testData/sauceDemo.xlsx"};
@@ -260,6 +264,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("2. Logging into Sauce Demo Website, ExternalExamples, sauceDemo", new string[] {
+                "DataSource:testData/sauceDemo.xlsx"})]
+        public void _2_LoggingIntoSauceDemoWebsite_ExternalExamples_SauceDemo()
+        {
+#line 24
+this._2_LoggingIntoSauceDemoWebsite("sauceDemo", "https://www.saucedemo.com/", "standard_user", "secret_sauce", "Aman", "Alam", "12345", "", "", "", "", "", ".", ((string[])(null)));
+#line hidden
         }
     }
 }
