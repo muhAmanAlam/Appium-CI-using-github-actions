@@ -25,6 +25,7 @@ steps:
   inputs:
     command: 'test'
     testRunTitle: 'SpecFlow Tests'
+    arguments: "--settings:testConfig.runsettings"
   
 # - task: VSTest@3
 #   inputs:
