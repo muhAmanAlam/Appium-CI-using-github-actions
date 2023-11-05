@@ -21,21 +21,19 @@ steps:
   inputs:
     command: 'build'
 
-# - task: DotNetCoreCLI@2
-#   displayName: 'Run Tests'
-#   inputs:
-#     command: test
-#     projects: '**/*.csproj'
-  
-- task: VSTest@3
+- task: DotNetCoreCLI@2
   inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: |
-      **\*test*.dll
-      testing\bin\Debug\NUnit3.TestAdapter.dll
-      !**\obj\**
-    searchFolder: '$(System.DefaultWorkingDirectory)'
-
+    command: 'test'
+    testRunTitle: 'SpecFlow Tests'
+  
+# - task: VSTest@3
+#   inputs:
+#     testSelector: 'testAssemblies'
+#     testAssemblyVer2: |
+#       **\*test*.dll
+#       testing\bin\Debug\NUnit3.TestAdapter.dll
+#       !**\obj\**
+#     searchFolder: '$(System.DefaultWorkingDirectory)'
 
 
 - task: SpecFlowPlus@0
