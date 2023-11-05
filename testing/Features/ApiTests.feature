@@ -1,4 +1,4 @@
-﻿Feature: Testinng the Postman-Echo API
+﻿Feature: Testing the Postman-Echo API
 
 A short summary of the feature
 
