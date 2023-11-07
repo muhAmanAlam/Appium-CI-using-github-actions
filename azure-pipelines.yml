@@ -11,12 +11,12 @@ pool:
   vmImage: windows-2019
 
 steps:
-- task: NuGetCommand@2
-  displayName: 'Restore NuGet Pakages'
-  inputs:
-    command: 'restore'
-    restoreSolution: '**/*.sln'
-    feedsToUse: 'config'
+# - task: NuGetCommand@2
+#   displayName: 'Restore NuGet Pakages'
+#   inputs:
+#     command: 'restore'
+#     restoreSolution: '**/*.sln'
+#     feedsToUse: 'config'
 
 - task: DotNetCoreCLI@2
   displayName: 'Build Project'
