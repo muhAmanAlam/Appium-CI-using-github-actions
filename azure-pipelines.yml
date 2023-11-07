@@ -11,12 +11,12 @@ pool:
   vmImage: windows-2019
 
 steps:
-# - task: NuGetCommand@2
-#   displayName: 'Restore NuGet Pakages'
-#   inputs:
-#     command: 'restore'
-#     restoreSolution: '**/*.sln'
-#     feedsToUse: 'config'
+- task: NuGetCommand@2
+  displayName: 'Restore NuGet Pakages'
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'config'
 
 - task: DotNetCoreCLI@2
   displayName: 'Build Project'
@@ -30,15 +30,6 @@ steps:
     testRunTitle: 'SpecFlow Tests'
     arguments: "--settings:testing/testConfig.runsettings"
   
-# - task: VSTest@3
-#   inputs:
-#     testSelector: 'testAssemblies'
-#     testAssemblyVer2: |
-#       **\*test*.dll
-#       testing\bin\Debug\NUnit3.TestAdapter.dll
-#       !**\obj\**
-#     searchFolder: '$(System.DefaultWorkingDirectory)'
-
 
 - task: SpecFlowPlus@0
   displayName: 'Generate and Publish SpecFlow+ LivingDoc'
