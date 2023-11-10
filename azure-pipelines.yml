@@ -7,8 +7,8 @@
 # trigger:
 # - main
 
-pool:
-  vmImage: windows-2019
+pool: Automation Agents
+
 
 steps:
 - task: NuGetCommand@2
