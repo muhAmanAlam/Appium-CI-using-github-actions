@@ -19,7 +19,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>testing</RootNamespace>
     <AssemblyName>testing</AssemblyName>
-    <TargetFrameworkVersion>v6.0.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
