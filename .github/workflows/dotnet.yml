@@ -28,13 +28,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 7.0
-    - name: Restore dependencies
-      with:
-          dotnet-version: 7.0
-          run: dotnet --version
+      run: dotnet --version
+
+    # - name: Restore dependencies
+    #   with:
+    #       dotnet-version: 7.0
     #   run: dotnet restore
     # - name: Build
     #   run: dotnet build --no-restore
