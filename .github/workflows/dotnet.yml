@@ -47,7 +47,7 @@ jobs:
         # Artifact name
         name: Extent Report
         # A file, directory or wildcard pattern that describes what to upload
-        path: /testing/Report/TestReport.html
+        path: C Sharp BDD/testing/Report/TestReport.html
         # The desired behavior if no files are found using the provided path.
 
     
