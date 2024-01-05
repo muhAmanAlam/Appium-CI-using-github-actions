@@ -28,7 +28,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
-      run: dotnet --version
       run: dir
     - name: Restore dependencies
       run: dotnet restore
