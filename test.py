@@ -27,14 +27,14 @@ class TestAppium(unittest.TestCase):
             self.driver.quit()
 
     def test_find_battery(self) -> None:
+        self.driver.get_screenshot_as_file('Screenshots\\battery.png')
         el = self.driver.find_element(by=AppiumBy.XPATH, value='//*[@text="Battery"]')
         el.click()
-        self.driver.get_screenshot_as_file('Screenshots\\battery.png')
 
     def test_find_network(self) -> None:
+        self.driver.get_screenshot_as_file('Screenshots\\network.png')
         el = self.driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@resource-id="android:id/title" and @text="Network & internet"]')
         el.click()
-        self.driver.get_screenshot_as_file('Screenshots\\network.png')
 
 if __name__ == '__main__':
     unittest.main()
