@@ -4,21 +4,21 @@
 name: .NET
 
 on:
-  workflow_dispatch:
-    inputs:
-      build_id:
-        required: true
-        type: string
-      deploy_target:
-        required: true
-        type: string
-      perform_deploy:
-        required: true
-        type: boolean 
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  # workflow_dispatch:
+  #   inputs:
+  #     build_id:
+  #       required: true
+  #       type: string
+  #     deploy_target:
+  #       required: true
+  #       type: string
+  #     perform_deploy:
+  #       required: true
+  #       type: boolean 
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
 
 jobs:
   build:
