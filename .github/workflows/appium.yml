@@ -21,17 +21,22 @@ jobs:
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
-          script: adb devices
+          script: |
+            npm i --location=global appium
+            appium driver install uiautomator2
+            appium &
+            pip install Appium-Python-Client
+            python test.py
 
-      - name: Install and Run Appium 
-        run: |
-          npm i --location=global appium
-          appium driver install uiautomator2
-          appium &
+      # - name: Install and Run Appium 
+      #   run: |
+      #     npm i --location=global appium
+      #     appium driver install uiautomator2
+      #     appium &
 
-      - name: Run Python Appium Test
-        run: |
-          pip install Appium-Python-Client
-          python test.py
+      # - name: Run Python Appium Test
+      #   run: |
+      #     pip install Appium-Python-Client
+      #     python test.py
       
       
