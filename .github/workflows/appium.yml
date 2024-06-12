@@ -27,6 +27,7 @@ jobs:
             appium &
             pip install Appium-Python-Client
             python test.py
+            kill $(lsof -t -i :4723)
 
             
       - name: Publish Artifacts
