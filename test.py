@@ -8,8 +8,6 @@ from appium.options.android import UiAutomator2Options
 capabilities = dict(
     platformName='android',
     appPackage='com.android.settings',
-    skipServerInstallation='true',
-    uiautomator2ServerLaunchTimeout='200000',
     appActivity='.Settings',
     language='en',
     locale='US'
