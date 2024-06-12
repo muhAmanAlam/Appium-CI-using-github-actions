@@ -28,15 +28,12 @@ jobs:
             pip install Appium-Python-Client
             python test.py
 
-      # - name: Install and Run Appium 
-      #   run: |
-      #     npm i --location=global appium
-      #     appium driver install uiautomator2
-      #     appium &
-
-      # - name: Run Python Appium Test
-      #   run: |
-      #     pip install Appium-Python-Client
-      #     python test.py
-      
-      
+            
+      - name: Publish Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4.0.0
+        with:
+          # Artifact name
+          name: Screenshots
+          # A file, directory or wildcard pattern that describes what to upload
+          path: Screenshots/
