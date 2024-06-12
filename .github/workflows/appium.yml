@@ -20,14 +20,14 @@ jobs:
       - name: run tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 29
+          api-level: 26
           script: |
             npm i --location=global appium
             appium driver install uiautomator2
             appium &
             pip install Appium-Python-Client
             python test.py
-            pkill -9 -f appium
+            kill $(lsof -t -i :4723)
 
             
       - name: Publish Artifacts
