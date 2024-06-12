@@ -1,4 +1,7 @@
-on: workflow_run
+on: 
+  push:
+    branches:
+      - main
 
 jobs:
   test:
