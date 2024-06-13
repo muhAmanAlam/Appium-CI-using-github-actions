@@ -16,19 +16,22 @@ jobs:
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
+      
+      - name: Install and launch appium server
+        run: |
+            npm i --location=global appium
+            appium driver install uiautomator2
+            appium &
 
       - name: run tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
           script: |
-            npm i --location=global appium
-            appium driver install uiautomator2
-            appium &
             pip install Appium-Python-Client
             python test.py
-            pkill -9 -f appium
-            kill $(lsof -t -i :4723)
+            # pkill -9 -f appium
+            # kill $(lsof -t -i :4723)
 
       - name: ls something
         if: always()
