@@ -13,13 +13,12 @@ jobs:
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
 
-      - name: run tests
+      - name: setuo platform tools
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
           script: |
-            pip install Appium-Python-Client
-            python test.py
+
 
       - name: Download, install and Run Zerotier
         run: |
@@ -41,7 +40,12 @@ jobs:
             npm i --location=global appium
             appium driver install uiautomator2
             appium &
-    
+            
+      - name: Run tests
+        run: |
+            pip install Appium-Python-Client
+            python test.py
+ 
       - name: Publish Artifacts
         if: always()
         uses: actions/upload-artifact@v4.0.0
