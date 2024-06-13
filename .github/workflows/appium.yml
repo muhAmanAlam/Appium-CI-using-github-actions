@@ -27,8 +27,8 @@ jobs:
             appium &
             pip install Appium-Python-Client
             python test.py
-            # pkill -9 -f appium
-            # kill $(lsof -t -i :4723)
+            pkill -9 -f appium
+            kill $(lsof -t -i :4723)
 
       - name: ls something
         if: always()
