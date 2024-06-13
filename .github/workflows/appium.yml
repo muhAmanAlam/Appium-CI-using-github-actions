@@ -20,7 +20,7 @@ jobs:
       - name: run tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 26
+          api-level: 29
           script: |
             npm i --location=global appium
             appium driver install uiautomator2
