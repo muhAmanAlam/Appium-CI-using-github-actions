@@ -1,7 +1,4 @@
-on: 
-  push:
-    branches:
-      - none
+on: workflow_dispatch
 
 jobs:
   test:
