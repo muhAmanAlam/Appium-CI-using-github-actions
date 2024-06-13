@@ -22,15 +22,12 @@ jobs:
         with:
           api-level: 26
           script: |
-            ls
-            cd Screenshots 
-            ls
             npm i --location=global appium
             appium driver install uiautomator2
             appium &
             pip install Appium-Python-Client
             python test.py
-            ls
+            pkill -9 -f appium
             kill $(lsof -t -i :4723)
 
       - name: ls something
