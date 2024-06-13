@@ -1,0 +1,55 @@
+on: 
+  push:
+    branches:
+      - none
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+          
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: run tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          script: |
+            pip install Appium-Python-Client
+            python test.py
+
+      - name: Download, install and Run Zerotier
+        run: |
+          curl -s https://install.zerotier.com | sudo bash
+          sudo zerotier-cli join 363c67c55ab7e59a
+          
+      - name: Install and run Adb server and check version
+        run: |
+          adb --version
+          adb start-server
+          adb kill-server 
+          cp adbkey ~/.android/
+          adb start-server
+          adb connect 10.241.230.230:5555
+          adb devices
+          
+      - name: Install and launch appium server
+        run: |
+            npm i --location=global appium
+            appium driver install uiautomator2
+            appium &
+    
+      - name: Publish Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4.0.0
+        with:
+          # Artifact name
+          name: Screenshots
+          # A file, directory or wildcard pattern that describes what to upload
+          path: Screenshots/
